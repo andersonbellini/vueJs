@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <div v-for="imagem in imagens">
+        <img :src="imagem" :title="titleImg" width="100px" />
+      </div>
+
+      <br>
+      <b>Ex: de Lista</b>
+      <div v-for="(fruta, index) in frutas">
+         {{index}} - {{fruta}}
+      </div>
+      <br>
+      <b>Ex: de Lista de Objeto</b>
+      <div v-for="(frutas, index) in frutaX">
+          {{index}} - {{frutas.nome}} // {{frutas.cor}}
+       </div>
+
+       <ul>
+         <li v-for="(value,key, index) in usuario" :key="usuario">
+            {{index}} - {{key}}:{{value}}
+         </li>
+       </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          imagens: ["dev1.jpg", "dev2.jpg", "dev3.jpg"],
+          usuario:{
+            nome:'Anderson',
+            telefone:'123456',
+            endereco:'Araraquara',
+            sobrenome:'Bellini'
+          },
+          frutas: ['Pera', 'Uva', 'Maça'],
+          frutaX: [
+            { id: 1, nome: 'Pera', cor: 'verde' }, 
+            { id: 3, nome: 'Uva', cor: 'roxa' }, 
+            { id: 2, nome: 'Maça', cor: 'vermelha' }
+            ]
+        }
+      });
+    </script>
+  </body>
+</html>

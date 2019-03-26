@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <img 
+            v-bind:src=srcImg 
+            :title=titleImg        
+        >
+
+        <a v-bind:href="url">{{url}}</a>
+        <hr>
+
+        <p v-text="'texto aqui'"></p>
+        <p v-text="titleImg"></p>
+
+        <div v-html="textoTela">
+            interpretando HTMl que está no data
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            srcImg: 'dev.jpg',
+            titleImg: 'dev',
+            url: 'http://www.google.com.br',
+            textoTela: '<b>Aqui</b> a <br> descrição'
+        }
+
+    })
+    </script>
+
+</body>
+</html>
